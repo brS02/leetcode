@@ -3,16 +3,17 @@ class Solution:
         num = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
       
         res = 0
-        i = 0
-        while i < len(s):
-            cur = num[s[i]]
+        previous = 0
 
-            if i+1 < len(s) and cur < num[s[i+1]]:
-                res += num[s[i+1]] - cur
-                i += 2
+        for char in reversed(s):
+            current = num[char]
 
+            if current < previous:
+                res -= current
+                
             else:
-                res += cur
-                i += 1
+                res += current
+
+            previous = current
             
         return res
