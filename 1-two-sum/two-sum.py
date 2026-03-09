@@ -1,6 +1,9 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for n in range(len(nums)):
-            for m in range(n+1, len(nums)):
-                if nums[n] + nums[m] == target:
-                    return [n, m]
+        ansHash = {}
+
+        for i, num in enumerate(nums):
+            j = target - num
+            if j in ansHash:
+                return [i, ansHash[j]]
+            ansHash[num] = i
