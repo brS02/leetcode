@@ -4,6 +4,6 @@ class Solution:
         for operation in operations:
             if operation == "++X" or operation == "X++":
                 ans += 1
-            else: 
+            elif operation == "X--" or operation == "--X": 
                 ans -= 1
         return ans
