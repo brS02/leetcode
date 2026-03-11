@@ -4,7 +4,7 @@ class Solution:
         x1, y1 = points.pop()
         while points:
             x2, y2 = points.pop()
-            ans += max(abs(y2-y1), abs(x2-x1)) # moves is based on max distance between x and y
+            ans += max(abs(y2-y1), abs(x2-x1)) # ans based on max distance
             x1, y1 = x2, y2
         return ans
             
